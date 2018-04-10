@@ -6,6 +6,12 @@ This is the Exam Tester Dirver
 Starting this up allows you to input Exam files, and then answer them with
 answer files
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+***************************************************************************************
+DONT USE THIS, THIS IS FROM THE PREVIOUS HOMEWORKS
+Use this as reference when building you new class if you wish
+***************************************************************************************
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
 
 
