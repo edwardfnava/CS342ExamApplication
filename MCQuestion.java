@@ -152,7 +152,7 @@ public class MCQuestion extends Question{
           //...Then multiple by the quesiton value by credit
           //and return the value earned
           double value = this.getQuestionValue() * a.getCredit(ans);
-          return value;
+        //  return value;
         }
       }
     }
@@ -162,7 +162,8 @@ public class MCQuestion extends Question{
   public void save(PrintWriter p){
     //Write the entire array of Multiple choice questions
     //First we write the correct type of Question (MCSA or MCMA)
-    //handles the correct type of Question
+    //handles the correct type of Question in MCSA and MCMA first by calling
+    //super
 
     //Then we write the value of the question
     String s = String.valueOf(this.getQuestionValue());
@@ -176,7 +177,7 @@ public class MCQuestion extends Question{
     }
     //Number of Answers
     p.println(i + "\r\n");
-    //Then we write the list of questions to the file
+    //Then we write the list of Answers to the question
     //Answers text saved next to credit text
     for(Answer a: answers){
       a.save(p);
