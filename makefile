@@ -10,9 +10,11 @@ CLASSES = \
         Answer.java \
         MCQuestion.java \
 				MCSAQuestion.java\
+				MCMAQuestion.java\
 				SAQuestion.java\
 				MCAnswer.java\
 				MCSAAnswer.java\
+				MCMAAnswer.java\
 				SAAnswer.java\
 				ScannerFactory.java\
 				ExamTester.java
