@@ -26,12 +26,15 @@ public class SAQuestion extends Question{
 
   public SAQuestion(Scanner s){
     //Question Value
+	System.out.println("Enter Value followed by the Question");  
     double value = s.nextDouble();
     this.setQuestionValue(value);
     //Question Text
     this.setText(s.nextLine());
     //Right Answer and sets it
+    System.out.println("Enter the Right answer to set");
     Answer a = new SAAnswer(s);
+    System.out.println("HERE");
     this.setRightAnswer(a);
   }
 
