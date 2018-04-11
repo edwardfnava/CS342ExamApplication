@@ -80,10 +80,6 @@ public class Question{
 
   }
 
-  public void getAnswerFromStudent(String input){
-
-  }
-
   public void setQuestionValue(double value){
     this.maxValue = value;
   }
