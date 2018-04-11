@@ -26,6 +26,7 @@ import java.io.*;
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.File;
+import java.util.Date;
 
 public class Exam {
 	//Name of the exam
@@ -44,16 +45,66 @@ public class Exam {
 	//MaxValue second
 	//Question Type Differentiations
 
-	//Creates an exam based on the scanner input
-	public Exam(Scanner sc){
-		if(sc.hasNextLine()){
-			String line;
-			line = sc.nextLine();
-			text = line;
+			//	//Creates an exam based on the scanner input
+			//	public Exam(Scanner sc){
+			//		if(sc.hasNextLine()){
+			//			String line;
+			//			line = sc.nextLine();
+			//			text = line;
+			//		}
+			//		else {
+			//			text = "EMPTY";
+			//		}
+			//		questions = new ArrayList<Question>();
+			//	}
+	//Scan file and add questions
+	public Exam(Scanner scn) {
+	
+		this.questions = new ArrayList<Question>();
+		if(scn.hasNextLine()) {
+			this.text = scn.nextLine();
 		}
-		questions = new ArrayList<Question>();
+		else {
+			System.out.println("DIDNOTHAPPEN");
+		}
+	    System.out.println("Enter the kind of question you would like to add exactly as its shown?"
+				 + "\n( MCSAQuestion, SAQuestion, MCMAQuestion, NumQuestion ) ");
+		//Loop trough scanner, check question type and insert appropriately
+//		while(scn.hasNext()) {
+	    String type = scn.nextLine();
+	    while( type !="" ) {
+		//	type = scn.nextLine();
+			System.out.println("You chose "+type);
+			if(type.equals("MCMAQuestion")) {
+				
+				this.questions.add(new MCMAQuestion(scn));
+				
+			}
+			//----------------------------------------------------------------
+			else if(type.equals("MCSAQuestion")) {
+				
+				this.questions.add(new MCSAQuestion(scn));
+				
+			}
+			//----------------------------------------------------------------
+			else if(type.equals("SAQuestion")) {
+				
+				this.questions.add(new SAQuestion(scn));
+				
+			}
+//			else if(type.equals("NumQuestion")){
+//				this.questions.add(new NumQuestion);
+//			}
+			//----------------------------------------------------------------
+			if( scn.nextLine().equals("")){
+				break;
+			}else {
+				type= scn.nextLine();
+			}
+			
+		}
 	}
-
+	
 
 
 
@@ -61,7 +112,15 @@ public class Exam {
 	public void addQuestion(Question q){
 		questions.add(q);
 	}
-
+	
+	//**** NEW ADDITITION Remove Question
+	public void removeQuestion( int i) {
+		questions.remove(i);
+	}
+	
+	public ArrayList<Question> getQuestion() {
+		return (this.questions);
+	}
 
 	//Goes throught the list and prints out Questions
 	//Since each kind of question has a print method,
@@ -146,6 +205,9 @@ public class Exam {
 	public void save(PrintWriter p){
 		//First, save the exam name in the first Line
 		p.println(this.text);
+		Date date = new Date();
+		
+		p.println(date.toString());
 		//Go through all the questions and save them
 		//Should work like this since all questions are specified in
 		//their type
