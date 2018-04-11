@@ -30,17 +30,21 @@ public class MCMAQuestion extends MCQuestion{
   public MCMAQuestion(String input, double value){
     this.setText(input);
     this.setQuestionValue(value);
+    studentAnswers = new ArrayList<MCMAAnswer>();
   }
 
   //Construct with scanner
   public MCMAQuestion(Scanner s){
-    Double d;
-    d = s.nextDouble();//Value of the Question
-    this.setQuestionValue(d);
+    studentAnswers = new ArrayList<MCMAAnswer>();
+    String scanner;
+    scanner = s.nextLine();
+    while(scanner != "\r\n"){
+      Double d;
+      d = s.nextDouble();//Value of the Question
+      this.setQuestionValue(d);
 
-    this.setText(s.nextLine());//Text of the Question
-
-    //Adds the answer to the array list of Questions
+      this.setText(s.nextLine());//Text of the Question
+    }
 
   }
 
@@ -102,10 +106,10 @@ public class MCMAQuestion extends MCQuestion{
     // You can also just add the credit together, in which case ignore the Number
     // since we're using lists and not arrays
 
-    int numberOfQuestions = sc.nextInt();
+    int numberOfAnswers = sc.nextInt();
     String line;
     //Store answers from student in the array
-    for(int i = 0; i < numberOfQuestions; i++){
+    for(int i = 0; i < numberOfAnswers; i++){
       line = sc.nextLine();
       getAnswerFromStudent(line);
     }

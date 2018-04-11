@@ -17,6 +17,7 @@ CLASSES = \
 				MCMAAnswer.java\
 				SAAnswer.java\
 				ScannerFactory.java\
+				ExamTaker.java\
 				ExamTester.java
 
 default:	classes

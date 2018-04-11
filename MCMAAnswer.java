@@ -17,7 +17,7 @@ import java.io.PrintWriter;
 import java.io.File;
 
 public class MCMAAnswer extends MCAnswer{
-  //Public constructor for the Multiple Choice Single Answer Answer
+  //Public constructor for the Multiple Choice Multiple Answer Answer
 
   public MCMAAnswer(String input, double creditIfSelected){
     this.setText(input);
@@ -28,6 +28,7 @@ public class MCMAAnswer extends MCAnswer{
   public MCMAAnswer(Scanner s){
     String line = s.nextLine();
     //Splits the string based on the space in between the two contents
+    // \\s+ matches a string of whitespace characters
     String[] split = line.split("\\s+");
     double d =Double.parseDouble(split[0]);//First is the credit
     this.setCredit(d);

@@ -35,6 +35,7 @@ public class Question{
   //Correct Answer
   private Answer rightAnswer;
 
+
   //Constructor that sets the text of the question and the max value of the question
   //Abstract
   public Question(){
@@ -55,14 +56,7 @@ public class Question{
   public void setStudentAnswer(Answer a){
     studentAnswer = a;
   }
-  //Abstract here so the right type of Answer is found
-  public Answer getNewAnswer(){
-    return this.getNewAnswer();
-  }
-  //Abstract here so the right type of Answer is found
-  public Answer getAnswerFromStudent(){
-    return this.getAnswerFromStudent();
-  }
+
 
   //Get the number of points this Question contributes to the exam using
   //get Credit, use this to score the Exam
@@ -83,6 +77,10 @@ public class Question{
   }
 
   public void restoreStudentAnswers(Scanner s){
+
+  }
+
+  public void getAnswerFromStudent(String input){
 
   }
 
