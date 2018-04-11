@@ -29,14 +29,28 @@ public class MCSAQuestion extends MCQuestion{
 
   //Construct with scanner
   public MCSAQuestion(Scanner s){
-    Double d;
-    d = s.nextDouble();//Value of the Question
-    this.setQuestionValue(d);
+	  
 
-    this.setText(s.nextLine());//Text of the Question
-
-      //Adds the answer to the array list of Questions
-      
+//
+//    this.setText(s.nextLine());//Text of the Question
+//
+//      //Adds the answer to the array list of Questions
+//      System.out.println("Enter answer using ( Double String ) format ");
+	  Double d = s.nextDouble();//Value of the Question
+	  this.setQuestionValue(d);
+	  this.setText(s.nextLine());
+      this.answers = new ArrayList<MCAnswer>();
+      System.out.println("Enter the number of answers for this question");
+	  int numAs = Integer.parseInt(s.nextLine());
+	  for(int i = 0; i < numAs; i++) {
+		  System.out.println("Enter Double String for new answer ");
+		double CiSCnS = s.nextDouble();
+		String Answer = s.nextLine().trim();
+		
+		MCSAAnswer nAns = new MCSAAnswer(Answer,CiSCnS);
+		
+		answers.add(nAns);
+	  }	  
   }
 
   public MCSAAnswer getNewAnswer(String input, double credit){

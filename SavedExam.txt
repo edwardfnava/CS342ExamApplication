@@ -1,0 +1,24 @@
+NATURE TEST
+Wed Apr 11 00:30:51 CDT 2018
+
+MCMAQuestion
+
+10.0
+
+ Second Question?
+
+2
+
+0.0 yes
+
+10.0 no
+
+
+SAQuestion
+
+5.0
+
+ This question only has one answer?
+
+true
+

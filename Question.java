@@ -39,6 +39,10 @@ public class Question{
   //Abstract
   public Question(){
   }
+  protected Question(Scanner sc) {
+	  this.maxValue = Double.parseDouble(sc.nextLine());
+	  this.text = sc.nextLine();
+  }
 
   //Print Method
   public void print(){

@@ -28,10 +28,15 @@ public class MCSAAnswer extends MCAnswer{
     String line = s.nextLine();
     //Splits the string based on the space in between the two contents
     String[] split = line.split("\\s+");
-    double d =Double.parseDouble(split[0]);//First is the credit
-    this.setCredit(d);
-
-    //Set the text of the answer to the second parsed string on the line
-    this.setText(split[1]);
+//    if(split[0] == "done"){
+//        //break;
+//    }
+//    else {
+	    double d =Double.parseDouble(split[0]);//First is the credit
+	    this.setCredit(d);
+	
+	    //Set the text of the answer to the second parsed string on the line
+	    this.setText(split[1]);
+//    }
   }
 }

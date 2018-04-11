@@ -31,6 +31,7 @@ public class SAQuestion extends Question{
     //Question Text
     this.setText(s.nextLine());
     //Right Answer and sets it
+    System.out.println("Enter the Right answer to set");
     Answer a = new SAAnswer(s);
     this.setRightAnswer(a);
   }

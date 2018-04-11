@@ -34,12 +34,27 @@ public class MCMAQuestion extends MCQuestion{
 
   //Construct with scanner
   public MCMAQuestion(Scanner s){
-    Double d;
-    d = s.nextDouble();//Value of the Question
-    this.setQuestionValue(d);
-
-    this.setText(s.nextLine());//Text of the Question
-
+//	super(s);
+ //   double d = s.nextDouble();//Value of the Question
+ //   this.setQuestionValue(d);
+    
+//    this.setText(s.nextLine());//Text of the Question
+	  double d = s.nextDouble();//Value of the Question
+	  this.setQuestionValue(d);
+	  this.setText(s.nextLine());
+    this.answers = new ArrayList<MCAnswer>();
+    System.out.println("Enter number of Answers for this question");
+    int numberOfAnswers = Integer.parseInt(s.nextLine());
+	
+	for(int i = 0; i < numberOfAnswers; i++) {			
+	    System.out.println("Enter value String for new answer");
+		double CreditIfSelected = s.nextDouble();
+		
+		String answerString = s.nextLine().trim();
+		System.out.println(answerString + CreditIfSelected);
+		MCMAAnswer mas = new MCMAAnswer(answerString,CreditIfSelected);
+		answers.add(mas);
+	}
     //Adds the answer to the array list of Questions
 
   }

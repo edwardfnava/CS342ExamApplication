@@ -21,14 +21,15 @@ import java.io.File;
 
 public class MCQuestion extends Question{
 
-  ArrayList<MCAnswer> answers;
+  protected ArrayList<MCAnswer> answers;
   //Abstract for the proper constructor to be called
   public MCQuestion(){
     answers = new ArrayList<MCAnswer>();
   }
   //Constructs the multiple choice question based off of read in text
   public MCQuestion(Scanner sc){
-
+	  super(sc);
+	  answers = new ArrayList<MCAnswer>();
   }
   //Prints the list of Answers that belong to the quesiton
   //Questions can contain 9 choices at most

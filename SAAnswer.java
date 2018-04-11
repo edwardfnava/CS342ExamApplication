@@ -25,6 +25,7 @@ public class SAAnswer extends Answer{
   }
 
   public SAAnswer(Scanner s){
+	  
     this.text = s.nextLine();
   }
 

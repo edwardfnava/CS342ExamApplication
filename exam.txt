@@ -1,0 +1,14 @@
+NATURE TEST
+MCSAQuestion
+9.0 First question working?
+2
+0.0 yes
+9.0 no
+MCMAQuestion
+10.0 Second Question?
+2
+0.0 yes
+10.0 no
+SAQuestion
+5.0 This question only has one answer?
+true
