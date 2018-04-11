@@ -13,7 +13,8 @@ getValue(): double
 reportQuestionValue(): void
 save(PrintWriter): void
 restoreStudentAnswers(Scanner): void
-
+removeQuestion( int ) :void
+getQuestion() : ArrayList<Question> {
 */
 
 //Edward Nava
@@ -67,11 +68,14 @@ public class Exam {
 		else {
 			System.out.println("DIDNOTHAPPEN");
 		}
+	    System.out.println("Enter the kind of question you would like to add exactly as its shown?"
+				 + "\n( MCSAQuestion, SAQuestion, MCMAQuestion, NumQuestion ) ");
 		//Loop trough scanner, check question type and insert appropriately
-		while(scn.hasNext()) {
-			
-			String type = scn.nextLine();
-			System.out.println(type);
+//		while(scn.hasNext()) {
+	    String type = scn.nextLine();
+	    while( type !="" ) {
+		//	type = scn.nextLine();
+			System.out.println("You chose "+type);
 			if(type.equals("MCMAQuestion")) {
 				
 				this.questions.add(new MCMAQuestion(scn));
@@ -89,7 +93,15 @@ public class Exam {
 				this.questions.add(new SAQuestion(scn));
 				
 			}
+//			else if(type.equals("NumQuestion")){
+//				this.questions.add(new NumQuestion);
+//			}
 			//----------------------------------------------------------------
+			if( scn.nextLine().equals("")){
+				break;
+			}else {
+				type= scn.nextLine();
+			}
 			
 		}
 	}
